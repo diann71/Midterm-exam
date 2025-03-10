@@ -1,4 +1,4 @@
-body{
+body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
@@ -7,71 +7,70 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.container{
-    background-color: #fff;
+    }
+    
+.container {
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
 }
-
-h1{
+    
+h1 {
     text-align: center;
     margin-bottom: 20px;
 }
-
-#todo-form{
-    display: flex;
-    margin-bottom: 20px;
-}
-#todo-input{
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-}
-button{
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-button:hover{
-    background-color: #218838;
-}
-
-#todo-list{
-    list-style-type: none;
-    padding: 0;
-}
-
-.todo-item{
+    
+#task-form {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+    
+#task-input {
     padding: 10px;
-    border-bottom: 1px solid #ccc;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 70%;
 }
-.todo-item:last-child{
-    border-bottom: none;
-}
-.todo-item span{
-    flex: 1;
-    margin-right: 10px;
-}
-.todo-item button{
-    background-color: #dc3545;
+    
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #ffffff;
     border: none;
-    color: #fff;
-    padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
 }
-.todo-item button:hover{
+    
+button:hover {
+    background-color: #218838;
+}
+    
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+    
+.task-item button {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+    
+.task-item span {
+    flex: 1;
+    margin-right: 10px;
+}
+    
+.task-item button:hover {
     background-color: #c82333;
 }

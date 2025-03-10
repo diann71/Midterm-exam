@@ -1,52 +1,48 @@
-let todos = [];
+let task = [];
 
-const todoForm = document.getElementById('todo-form');
-const todoInput = document.getElementById('todo-input');
-const todoList = document.getElementById('todo-list');
+const taskForm = document.getElementById('task-form');
+const taskInput = document.getElementById('task'); 
+const taskList = document.getElementById('taskList');
 
-function renderTodos() {
-    todoList.innerHTML = '';
-    todos.forEach((todo, index) => {
+function renderTask() {
+    taskList.innerHTML = '';
+    task.forEach((task, index) => {
         const li = document.createElement('li');
-        li.className = 'todo-item';
+        li.className = 'task-item';
         li.innerHTML = `
-             <span>${todo}</span>
-             <button onclick="editTodo(${index})">Edit</button>
-             <button onclick="deleteTodo(${index})">Delete</button>
+            <span>${task}</span>
+            <button class="edit-btn" onclick="editTask(${index})">Edit</button>
+            <button class="delete-btn" onclick="deleteTask(${index})">Delete</button>
         `;
-        todoList.appendChild(li);
+    taskList.appendChild(li);
     });
 }
 
-function addTodo(event) {
+function addTask(event) {
     event.preventDefault();
-    const newTodo = todoInput.value.trim();
-    if(newTodo) {
-        todos.push(newTodo);
-        todoInput.value = '';
-        renderTodos();
+    const newTask = taskInput.value.trim();
+    if (newTask) {
+    task.push(newTask);
+    renderTask();
+    taskInput.value = '';
     }
 }
 
-function editTodo(index) {
-    event.preventDefault();
-    const updatedTodo = prompt('Edit your todo: ', todos[index]);
-    if(updatedTodo !== null) {
-        todos[index] = updatedTodo.trim();
-        renderTodos();
+function editTask(index) {
+    const updatedTask = prompt('Edit Task', task[index]);
+    if (updatedTask) {
+    task[index] = updatedTask;
+    renderTask();
     }
 }
 
-
-function deleteTodo(index) {
-    if(confirm('Are you sure you want to delete this todo? ')) {
-        todos.splice(index, 1);
-        renderTodos();
+function deleteTask(index) {
+    if (confirm('Are you sure you want to delete this task?')) {
+    task.splice(index, 1);
+    renderTask();
     }
 }
 
-todoForm.addEventListener('submit', addTodo);
+taskForm.addEventListener('submit', addTask);
 
-renderTodos();
-
-
+renderTask();
